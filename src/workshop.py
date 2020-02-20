@@ -14,3 +14,14 @@ def multiply_by_10(df):
         if df.dtypes[col] != 'object':
             df[col] = df[col] * 10
     return df
+
+def impute_nans(df, columns):
+    for col in columns:
+        if df.dtypes[col] in ['int', 'float']:
+            df[col] = df[col].fillna(df[col].dropna().median())
+    return df
+
+def add_is_alone_column(df):
+    df['IsAlone'] = 0
+    df.loc[df['FamilySize'] == 1, 'IsAlone'] = 1
+    return df
