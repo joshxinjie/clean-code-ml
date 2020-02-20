@@ -2,9 +2,9 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 
-from preprocessing import (add_categorical_columns, add_derived_title,
-                           add_is_alone_column, categorize_column, impute_nans, 
-                           train_model)
+from src.preprocessing import (add_categorical_columns, add_derived_title,
+                            add_is_alone_column, categorize_column, impute_nans, 
+                            train_model)
 
 def prepare_data_and_train_model():
     df = pd.read_csv("./input/train.csv")

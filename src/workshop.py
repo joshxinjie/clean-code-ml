@@ -1,3 +1,6 @@
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+
 def train_model(modelClass, X_train, Y_train, X_test, **kwargs):
     model = modelClass(**kwargs)
     model.fit(X_train, Y_train)
